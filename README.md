@@ -6,7 +6,9 @@ Clone this repository and run Composer as follows:
 To create your new Zend Framework project:
 
 ```bash
-git clone git@github.com:csantos50/crud_api.git
+git clone https://github.com/csantos50/crud_api.git
+
+cd crud_api
 
 composer install
 ```
