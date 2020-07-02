@@ -31,7 +31,7 @@ View Category
 [GET] http://localhost:8080/view[:id]
 ```
 
-Edit Categories
+Edit Category
 ```bash
 [POST] http://localhost:8080/edit[:id]
 
