@@ -81,6 +81,39 @@ class IndexController extends AbstractActionController
         $this->send('ok', $category);
     }
 
+    public function searchAction()
+    {
+        $post = file_get_contents('php://input');
+        $data = json_decode($post);
+
+        if (count($data) > 0) {
+
+            if ($data->id) {
+                $find['id'] = $data->id;
+            }
+            if ($data->name) {
+                $find['name'] = $data->name;
+            }
+            if ($data->created) {
+                $find['created'] = $data->created;
+            }
+            if ($data->modified) {
+                $find['modified'] = $data->modified;
+            }
+            $category = $this->table->findBy($find);
+            if ($category == null) {
+                $this->getResponse()->setStatusCode(404);
+                return;
+            } else {
+                $this->send('ok', $category);
+            }
+        }
+
+
+        $this->getResponse()->setStatusCode(404);
+        return;
+    }
+
     public function editAction()
     {
         if ($this->getRequest()->isPost()) {

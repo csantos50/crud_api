@@ -23,25 +23,34 @@ composer serve
 
 List all Categories
 ```bash
-http://localhost:8080/category
+[GET] http://localhost:8080/category
 ```
 
 View Category
 ```bash
-http://localhost:8080/view[:id]
+[GET] http://localhost:8080/view[:id]
 ```
 
 Edit Categories
 ```bash
-http://localhost:8080/edit[:id]
+[POST] http://localhost:8080/edit[:id]
 
 {
     "name":"nameCatehory"
 }
-
 ```
 
 Delete Category
 ```bash
-http://localhost:8080/delete[:id]
+[GET] http://localhost:8080/delete[:id]
 ```
+
+Search Category
+```bash
+[POST] http://localhost:8080/category/search
+
+{
+    "name":"nameCatehory"
+}
+```
+The search can be done by "id","name","created","modified"
